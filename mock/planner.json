@@ -1,0 +1,76 @@
+{
+    "statusCode": 200,
+    "message": null,
+    "data": [
+        {
+            "id": "05688892-3c47-48e5-a69c-7ffc4eef4970",
+            "asignatedAt": "2020-12-03T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "09858531-7b01-403d-a802-6e909b55ca04",
+            "asignatedAt": "2020-12-12T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "0a8f8bad-c4e6-4526-95ee-68b54db115e1",
+            "asignatedAt": "2020-11-29T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "11c8008d-79dd-4ba5-88fc-bf2322d4da1e",
+            "asignatedAt": "2020-11-24T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "151b1d4f-bae9-4c94-b043-b23f5e853beb",
+            "asignatedAt": "2020-12-14T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "180e16b3-2a4d-4054-917a-0d4c0e7a94af",
+            "asignatedAt": "2020-12-07T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        },
+        {
+            "id": "210a00e5-82a0-44c9-8e46-20985e5be6fc",
+            "asignatedAt": "2020-12-13T00:00:00",
+            "idProduct": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "productName": "CHIPS AND FISH",
+            "quantity": 3,
+            "statusId": 1,
+            "statusName": "ACTIVE",
+            "dayName": null
+        }
+    ]
+}

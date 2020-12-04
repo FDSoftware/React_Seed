@@ -1,0 +1,75 @@
+variables:
+  FRONT_IMAGE_TAG: "$CI_REGISTRY_IMAGE/${CI_COMMIT_REF_SLUG}:$CI_PIPELINE_ID"
+
+services:
+  - docker:18.09.7-dind
+
+stages:
+#  - testing
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  only:
+    - develop
+    - staging
+    - master
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+    - apk update
+    - apk upgrade
+    - apk add --no-cache libffi-dev openssl-dev gcc libc-dev make
+    - docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+  script:
+    - docker build --build-arg G_MAPS_ARG="$CI_G_MAPS" -t "$FRONT_IMAGE_TAG" -f "./Dockerfile" .
+    - docker push "$FRONT_IMAGE_TAG"
+  after_script:
+    - docker rmi "$FRONT_IMAGE_TAG"
+    - docker logout ${CI_REGISTRY}
+
+#testing:
+#  stage: build
+#  image: node:12.13.1-buster-slim
+#  cache:
+#    paths:
+#      - node_modules/
+#      - .yarn
+#  only:
+#    - merge_requests
+#  before_script:
+#    - yarn config set cache-folder .yarn
+#    - yarn install --frozen-lockfile
+#  script:
+#    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub |  apt-key add -
+#    - echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' |  tee /etc/apt/sources.list.d/google-chrome.list
+#    - apt-get update
+#    - apt-get install google-chrome-stable -y
+#    - npm run test-ci
+#  artifacts:
+#    reports:
+#      junit: "junit.xml"
+
+deploy:
+  image: alpine:3.7
+  stage: deploy
+  environment:
+    name: ${CI_COMMIT_REF_SLUG}
+  only:
+    - develop
+    - staging
+    - master
+  script:
+    - apk update && apk add --no-cache curl gettext
+    - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+    - chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+    - mkdir -p $HOME/.kube
+    - echo -n $KUBE_CONFIG | base64 -d > $HOME/.kube/config
+    - cd deploy/${CI_COMMIT_REF_SLUG}/
+    - envsubst < deployment.yml > deployment.final.yml
+    - kubectl apply -f deployment.final.yml
+    - kubectl apply -f services.yml
+
+    - if [ "${CI_COMMIT_REF_SLUG}" != "master" ]; then kubectl rollout status deployment.apps/frg-fe -w --namespace=frg-${CI_COMMIT_REF_SLUG}-fe; else kubectl rollout status deployment.apps/frg-fe -w --namespace=frg-prod; fi
+    - if [ "${CI_COMMIT_REF_SLUG}" != "master" ]; then kubectl get all --namespace=frg-${CI_COMMIT_REF_SLUG}-fe; else kubectl get all --namespace=frg-prod; fi

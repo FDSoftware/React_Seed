@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuspenseLoader renders without crashing & matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="loader"
+    style="position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 10000; background-color: rgb(255, 255, 255); display: flex; align-items: center; flex-direction: column; justify-content: center; margin-top: auto; margin-bottom: auto;"
+  >
+    <div
+      class="MuiCircularProgress-root loader__spinner MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      role="progressbar"
+      style="width: 6rem; height: 6rem; color: rgb(232, 234, 239); margin: 0px; padding: 0px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;

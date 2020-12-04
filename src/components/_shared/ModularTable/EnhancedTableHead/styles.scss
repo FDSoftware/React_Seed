@@ -1,0 +1,22 @@
+//FIXME: limpiar estilos, varios sin usar
+@import "assets/scss/main";
+
+.user-table {
+	margin-top: 2.5rem;
+
+	&__header-cell {
+		color: $gray-500;
+		white-space: nowrap;
+		padding: 1rem;
+	
+	}
+	&__header-label {
+		white-space: nowrap;
+		font-family: "Poppins medium";
+		color: black;
+		font-size: 0.85rem;
+		&--disabled {
+			cursor: unset;
+		}
+	}
+}

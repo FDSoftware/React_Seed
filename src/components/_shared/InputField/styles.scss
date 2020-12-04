@@ -1,0 +1,57 @@
+@import "assets/scss/main";
+
+.Mui-success:not(.Mui-disabled) {
+	.MuiFormLabel-root,
+	.MuiInputLabel-root,
+	.MuiInputLabel-formControl {
+		color: $green-500;
+	}
+	&.MuiFormLabel-root {
+		color: $green-500;
+	}
+	&.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+	& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+		border-color: $green-500;
+		&:hover {
+			border-color: $green-500;
+		}
+	}
+	.MuiOutlinedInput-root:hover:not(.Mui-disabled):not(.Mui-focused):not(.Mui-error)
+		.MuiOutlinedInput-notchedOutline {
+		border-color: $green-500;
+	}
+
+	&.MuiOutlinedInput-root:hover:not(.Mui-disabled):not(.Mui-focused):not(.Mui-error)
+		.MuiOutlinedInput-notchedOutline {
+		border-color: $green-500;
+	}
+	&:hover {
+		border-color: $green-500;
+	}
+}
+
+.MuiInputBase-root:not(.Mui-disabled) {
+	.error-icon {
+		color: $red-500;
+	}
+	.success-icon {
+		color: $green-500;
+	}
+	.error-icon,
+	.success-icon {
+		margin-right: $h-2;
+	}
+}
+
+.no-border {
+	.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+		border: none;
+	}
+	.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+		box-shadow: none;
+		border: none;
+	}
+	.MuiInputAdornment-positionStart {
+		margin-right: $h-4;
+	}
+}

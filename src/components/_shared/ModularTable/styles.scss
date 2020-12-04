@@ -1,0 +1,72 @@
+@import "assets/scss/main";
+
+.modular-table {
+	border-radius: 1.25rem !important;
+	thead,
+	tbody {
+		background-color: white;
+		box-shadow: 0px 10px 20px rgba(0, 90, 159, 0.05) !important;
+	}
+	tbody {
+		border-bottom-left-radius: 1.25rem;
+		border-bottom-right-radius: 1.25rem;
+		overflow: hidden;
+	}
+	&__header {
+		color: $gray-500;
+		width: 100%;
+	}
+
+	&__empty {
+		margin-top: $v-3;
+		text-align: center;
+	}
+	&__warning {
+		color: $blue-500;
+	}
+
+	&__footer {
+		color: $gray-800;
+		background-color: transparent;
+
+		.MuiTableCell-footer {
+			padding: 1rem 0;
+			border-bottom: none;
+		}
+	}
+	&__pagination {
+		display: flex;
+		justify-content: flex-end;
+		.MuiPagination-ul {
+			justify-content: flex-end;
+			width: max-content;
+		}
+		.MuiPaginationItem-page {
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			&:focus,
+			&:hover {
+				background-color: $gray-300;
+			}
+			&.Mui-selected {
+				color: $white-500;
+				background-color: $blue-base;
+			}
+		}
+	}
+	&__results-indicator {
+		color: $gray-800;
+	}
+
+	.MuiTableSortLabel-root.MuiTableSortLabel-active {
+		color: $gray-500;
+	}
+	.MuiPaginationItem-root {
+		color: $gray-500;
+	}
+
+	.MuiPaginationItem-icon {
+		color: $blue-base;
+	}
+}

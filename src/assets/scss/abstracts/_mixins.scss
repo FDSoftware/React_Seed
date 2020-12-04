@@ -1,0 +1,35 @@
+@mixin screen-size($size) {
+	@if $size == "sm" {
+		@media (min-width: 600px) {
+			@content;
+		}
+	}
+	@if $size == "md" {
+		@media (min-width: 1000px) {
+			@content;
+		}
+	}
+	@if $size == "lg" {
+		@media (min-width: 1280px) {
+			width: 100% !important;
+			padding-right: 3.5rem !important;
+			padding-left: 3.5rem !important;
+			@content;
+		}
+	}
+	@if $size == "xl" {
+		@media (min-width: 1920px) {
+			width: 100% !important;
+			padding-right: 3.5rem !important;
+			padding-left: 3.5rem !important;
+			@content;
+		}
+	}
+}
+
+@mixin line-clamp($nth-of-lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: $nth-of-lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

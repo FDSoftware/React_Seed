@@ -1,0 +1,80 @@
+.status {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 120px;
+		height: 44px;
+		border-radius: 10px;
+	}
+
+	&__container {
+		&--Ordered {
+			@extend .status__container;
+			background: #f5f5f5;
+		}
+		&--checkedIn {
+			@extend .status__container;
+			background: rgba(255, 143, 72, 0.15);
+		}
+		&--delivered {
+			@extend .status__container;
+			background: rgba(31, 171, 70, 0.1);
+		}
+		&--closed {
+			@extend .status__container;
+			background: rgba(57, 160, 255, 0.15);
+		}
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+
+		&--Ordered {
+			@extend .status__text;
+			color: #969ba0;
+		}
+		&--checkedIn {
+			@extend .status__text;
+			color: #ff8f48;
+		}
+		&--delivered {
+			@extend .status__text;
+			color: #2bc155;
+		}
+		&--closed {
+			@extend .status__text;
+			color: #39a0ff;
+		}
+	}
+}
+
+.Order {
+	&-Actions {
+		display: flex;
+		align-items: center;
+		/* 	max-width: 18rem; */
+		.MuiFormControl-marginNormal {
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
+		}
+		.MuiButton-text {
+			margin-left: 2rem;
+			height: 3rem;
+		}
+
+		.MuiButton-startIcon {
+			display: inherit;
+			margin-left: -24px;
+			margin-right: 8px;
+		}
+		.MuiButton-endIcon {
+			display: inherit;
+			margin-left: 8px;
+			margin-right: -24px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@import "assets/scss/main";
+
+.number-spinner {
+	max-width: 7.1875em;
+	.MuiInputBase-input {
+		text-align: center;
+	}
+	.MuiInputAdornment-root {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+.MuiInputAdornment-positionStart,
+.MuiInputAdornment-positionEnd {
+	margin: 0;
+}
+
+.number-spinner.Mui-disabled {
+	cursor: default !important;
+}

@@ -1,0 +1,39 @@
+@import "assets/scss/main";
+
+.dashboard {
+	&__title {
+		font-family: "Poppins medium";
+		margin-bottom: 0.5rem;
+	}
+	&__subtitle {
+		span {
+			font-family: "Poppins medium";
+			color: #969ba0;
+		}
+	}
+	&__header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
+}
+.cards-container {
+	width: 100%;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax((300px), 1fr));
+	margin-bottom: 2rem;
+}
+.summary-container {
+	width: 100%;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr;
+	// In case we need to make it responsive and show a different layout for bigger screen sizes
+	// @media screen and (min-width: 1280px) {
+	// 	grid-template-columns: 0.5fr;
+	// }
+}
